@@ -1,0 +1,26 @@
+// nav styles
+
+.nav {
+  margin: 0;
+}
+
+.nav-items {
+  a {
+    color: #454545;
+    padding: 0;
+    margin: 2em 0;
+    font-weight: 600;
+  }
+  font-size: 0.7em;
+  white-space: nowrap;
+  margin-left: auto;
+  padding: 0.2em;
+}
+
+.nav {
+  box-shadow: #454545;
+}
+
+.logo {
+  margin-left: 2em;
+}
