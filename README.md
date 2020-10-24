@@ -1,3 +1,10 @@
+# Hello There You Can Find The Project Hosted in the Link Below
+
+http://hackernews-frontend.s3-website.eu-west-2.amazonaws.com/
+
+Thank you for taking time out to look at this 👍🏾
+Info on how to run the project can be found below ⬇️
+
 # HackerNews
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
