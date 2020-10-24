@@ -8,6 +8,8 @@ import { ArticleService } from './services/article.service';
 })
 export class AppComponent implements OnInit {
 
+  displayCommentSection = false;
+
   constructor(
     private articleService: ArticleService
   ) {}
@@ -16,5 +18,9 @@ export class AppComponent implements OnInit {
 
   loadNextArticles() {
     this.articleService.fetchTopStories(true);
+  }
+
+  toggleCommentSection() {
+    this.displayCommentSection = !this.displayCommentSection;
   }
 }

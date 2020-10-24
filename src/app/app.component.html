@@ -17,6 +17,15 @@
         More
       </button>
     </div>
+    <comment *ngIf="displayCommentSection"></comment>
+    <div class="more-btn">
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        (click)="toggleCommentSection()">
+        Comment
+      </button>
+    </div>
   </div>
 
 </div>

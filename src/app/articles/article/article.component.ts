@@ -19,6 +19,7 @@ export class ArticleComponent implements OnInit {
 
   showArticleComments(article) {
     const commentIds: Array<number> = article.kids;
+    console.info(`Here are the comments for -> ${article.title}`);
     this.articleService.fetchArticleComments(commentIds);
   }
 }

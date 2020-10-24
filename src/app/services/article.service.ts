@@ -11,10 +11,17 @@ export class ArticleService {
   readonly baseUrl = 'https://hacker-news.firebaseio.com/v0/';
   topNineStoriesIds: Array<number>;
   articles: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  articleIds = [];
 
   constructor(
     private http: HttpClient
   ) { }
+
+  private addArticleIds(ids: Array<number>) {
+    ids.map(id => {
+      this.articleIds.push(id);
+    });
+  }
 
   fetchTopStories(nextNineArticles?: boolean) {
     return this.http.get(`${this.baseUrl}topstories.json?print=pretty`)
@@ -22,9 +29,11 @@ export class ArticleService {
         map((ids: Array<number>) => {
           if (nextNineArticles) {
             const nextTop9Ids = ids.slice(0, 18);
+            this.addArticleIds(nextTop9Ids);
             return nextTop9Ids;
           }
           const top9Ids = ids.slice(0, 9);
+          this.addArticleIds(top9Ids);
           return top9Ids;
         })
       )

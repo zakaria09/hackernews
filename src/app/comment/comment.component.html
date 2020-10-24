@@ -1,0 +1,45 @@
+<form [formGroup]="commentForm" (ngSubmit)="saveComment()">
+  <div class="form-group">
+    <label>Your Name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="by"
+      placeholder="Enter Full Name...">
+  </div>
+  <div class="form-group">
+    <label>Article ID</label>
+    <select
+      class="custom-select"
+      formControlName="parent">
+      <option
+        *ngFor="let id of articleIds"
+        [value]="id">
+        {{ id }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Comment</label>
+    <textarea
+      class="form-control"
+      formControlName="text">
+    </textarea>
+  </div>
+  <div *ngIf="hasValidationError">
+    <div class="alert alert-danger" role="alert">
+      All Fields Are Required!
+    </div>
+  </div>
+  <div *ngIf="(!hasValidationError && isSubmitted)">
+    <div class="alert alert-success" role="alert">
+      Successfully Submitted! Check Your Console.
+    </div>
+  </div>
+  <button
+    type="submit"
+    [disabled]="commentForm.invalid"
+    class="btn btn-primary">
+    Submit
+  </button>
+</form>
