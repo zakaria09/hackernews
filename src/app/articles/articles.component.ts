@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-articles',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
 
-  constructor() { }
+  articles = [];
+
+  constructor(
+    private aticleService: ArticleService
+  ) { }
 
   ngOnInit(): void {
+    this.aticleService.fetchTopStoriesIds();
+    this.aticleService.articles
+      .subscribe(response => {
+        if (response) {
+          this.articles.push(response);
+          console.log(this.articles)
+        }
+      });
   }
 
 }
