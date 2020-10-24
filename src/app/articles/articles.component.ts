@@ -15,12 +15,11 @@ export class ArticlesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.aticleService.fetchTopStoriesIds();
+    this.aticleService.fetchTopStories();
     this.aticleService.articles
       .subscribe(response => {
         if (response) {
           this.articles.push(response);
-          console.log(this.articles)
         }
       });
   }

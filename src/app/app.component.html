@@ -1,7 +1,7 @@
 
 <app-nav></app-nav>
-<!-- remove the enforced height later -->
-<div style="height: 800px;" class="content">
+
+<div class="content">
 
   <h1 class="title">News</h1>
 
@@ -9,6 +9,14 @@
 
     <app-articles></app-articles>
 
+    <div class="more-btn">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg"
+        (click)="loadNextArticles()">
+        More
+      </button>
+    </div>
   </div>
 
 </div>

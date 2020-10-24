@@ -1,21 +1,8 @@
-<div class="card" *ngFor="let article of articles">
-  <img src="../assets/Programmer-working-in-a-software-developing-company-office-665158684_5379x3586.jpeg" class="card-img-top" alt="">
-  <div class="card-body">
-    <a href="#">
-      <h5 class="card-title">{{ article.title }}</h5>
-    </a>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor diam. Nulla ultrices velit et ante
-      tempor, vitae lacinia elit pulvinar. Suspendisse mattis enim eget ante imperdiet, sed imperdiet risus cursus. Donec dignissim
-      scelerisque dignissim. Nunc id tincidunt</p>
-    <a href="#" class="mx-2">
-      <span class="badge badge-secondary">
-        Gaming
-      </span>
-    </a>
-    <a href="#">
-      <span class="badge badge-secondary">
-        Wow
-      </span>
-    </a>
+<div class="container">
+  <div class="row">
+    <div class="card" *ngFor="let article of articles">
+      <img src="../assets/Programmer-working-in-a-software-developing-company-office-665158684_5379x3586.jpeg" class="card-img-top" alt="">
+      <article [article]="article"></article>
+    </div>
   </div>
 </div>
