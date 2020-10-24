@@ -8,6 +8,7 @@ import { ArticleService } from './services/article.service';
 })
 export class AppComponent implements OnInit {
 
+  title = 'News'
   displayCommentSection = false;
 
   constructor(
